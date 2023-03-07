@@ -1,15 +1,14 @@
-import Login from './components/Login';
+import LoginPage from './components/pages/login/LoginPage';
 
 function App() {
-  // state(état, données)
+  // state
 
-  // comportements
+  // comportenments
 
   // affichage(render)
-
   return (
     <div>
-      <Login />
+      <LoginPage />
     </div>
   );
 }
