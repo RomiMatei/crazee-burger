@@ -1,4 +1,4 @@
-import Login from './components/pages/LoginPage';
+import LoginPage from './components/pages/login/LoginPage';
 
 function App() {
   // state
@@ -8,7 +8,7 @@ function App() {
   // affichage(render)
   return (
     <div>
-      <Login />
+      <LoginPage />
     </div>
   );
 }
