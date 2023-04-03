@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarRightSide from './NavbarRightSide';
-import NavbarLeftSide from './NavbarLeftSide';
+import Logo from '../../reusable-ui/Logo';
 
 export default function Navbar({ username }) {
   return (
     <NavbarStyled>
-      <NavbarLeftSide />
+      <Logo />
       <NavbarRightSide username={username} />
     </NavbarStyled>
   );
@@ -18,4 +18,5 @@ const NavbarStyled = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 `;
