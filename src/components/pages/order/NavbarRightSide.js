@@ -19,13 +19,12 @@ export default function NavbarRightSide({ username }) {
 
 const NavbarRightSideStyled = styled.nav`
   background: pink;
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 100%;
-  /* width: 50%; */
+  height: 100%; */
 
-  .username {
+  /* .username {
     background: yellow;
   }
 
@@ -33,5 +32,5 @@ const NavbarRightSideStyled = styled.nav`
     font-size: 32px;
     color: blue;
     margin: 0 1rem;
-  }
+  } */
 `;
