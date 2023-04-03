@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import NavbarRightSide from './NavbarRightSide';
 import NavbarLeftSide from './NavbarLeftSide';
 
-export default function Navbar() {
+export default function Navbar({ username }) {
   return (
     <NavbarStyled>
       <NavbarLeftSide />
-      <NavbarRightSide />
+      <NavbarRightSide username={username} />
     </NavbarStyled>
   );
 }

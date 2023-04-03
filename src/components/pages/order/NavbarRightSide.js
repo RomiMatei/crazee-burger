@@ -2,11 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { BsPersonCircle } from 'react-icons/bs';
-import { useParams } from 'react-router-dom';
 
-export default function NavbarRightSide() {
-  const { username } = useParams();
-
+export default function NavbarRightSide({ username }) {
   return (
     <NavbarRightSideStyled>
       <div className="username">
