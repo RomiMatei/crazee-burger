@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { theme } from '../../../theme';
 
 export default function Main() {
-  return (
-    <MainStyled className="main">
-      <h1>Main</h1>
-    </MainStyled>
-  );
+  return <MainStyled className="main"></MainStyled>;
 }
 
 const MainStyled = styled.div`
-  background: green;
+  background: ${theme.colors.background_white};
   flex: 1;
+
+  border-bottom-left-radius: ${theme.borderRadius.extraRound};
+  border-bottom-right-radius: ${theme.borderRadius.extraRound};
+  box-shadow: 0 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
 `;
