@@ -18,6 +18,7 @@ const MainStyled = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
+  overflow-y: scroll;
 
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
@@ -26,8 +27,4 @@ const MainStyled = styled.div`
   /* .basket {
     background: pink;
   } */
-
-  .menu {
-    background: purple;
-  }
 `;
