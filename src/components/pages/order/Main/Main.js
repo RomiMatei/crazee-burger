@@ -26,8 +26,4 @@ const MainStyled = styled.div`
   /* .basket {
     background: pink;
   } */
-
-  .menu {
-    background: purple;
-  }
 `;
