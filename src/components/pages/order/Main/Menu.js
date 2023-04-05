@@ -10,7 +10,12 @@ export default function Menu() {
   return (
     <MenuStyled className="menu">
       {menu.map((produit) => {
-        return <Product {...produit} />;
+        return (
+          <div>
+            {' '}
+            <Product {...produit} />{' '}
+          </div>
+        );
       })}
     </MenuStyled>
   );
