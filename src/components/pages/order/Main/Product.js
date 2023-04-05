@@ -5,8 +5,8 @@ export default function Product({ title, imageSource, price }) {
     <ProductStyled className="product">
       <img className="image" src={imageSource} alt={title} />
       <div className="info-text">
+        <div className="title">{title}</div>
         <div className="description">
-          <div className="title">{title}</div>
           <div className="price">{price} €</div>
           <button className="button">Ajouter</button>
         </div>
@@ -17,13 +17,17 @@ export default function Product({ title, imageSource, price }) {
 
 const ProductStyled = styled.div`
   background: red;
-  width: 240px;
+  width: 200px;
   height: 330px;
+  display: grid;
+  grid-template-rows: 65% 1fr;
+  padding: 20px 20px 0 20px;
 
   .image {
-    border: 1px solid black;
-    width: 100px;
+    border: 1px solid yellow;
+    width: 100%;
     height: auto;
+    margin-top: 30px;
 
     img {
       width: 100%;
@@ -33,6 +37,6 @@ const ProductStyled = styled.div`
   }
 
   .description {
-    border: 1px solid black;
+    border: 1px solid blue;
   }
 `;
