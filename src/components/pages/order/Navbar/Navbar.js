@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavbarRightSide from './NavbarRightSide';
 import Logo from '../../../reusable-ui/Logo';
 import { theme } from '../../../../theme';
+import ToggleButton from '../../../reusable-ui/ToggleButton';
 
 export default function Navbar({ username }) {
   const reloadPage = () => {
@@ -12,6 +13,7 @@ export default function Navbar({ username }) {
   return (
     <NavbarStyled>
       <Logo className="logo-order-page" onClick={reloadPage} />
+      <ToggleButton />
       <NavbarRightSide username={username} />
     </NavbarStyled>
   );
