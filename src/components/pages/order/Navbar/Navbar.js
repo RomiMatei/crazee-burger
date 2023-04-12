@@ -4,7 +4,7 @@ import NavbarRightSide from './NavbarRightSide';
 import Logo from '../../../reusable-ui/Logo';
 import { theme } from '../../../../theme';
 
-export default function Navbar({ username }) {
+export default function Navbar() {
   const reloadPage = () => {
     window.location.reload();
   };
@@ -12,7 +12,7 @@ export default function Navbar({ username }) {
   return (
     <NavbarStyled>
       <Logo className="logo-order-page" onClick={reloadPage} />
-      <NavbarRightSide username={username} />
+      <NavbarRightSide />
     </NavbarStyled>
   );
 }
