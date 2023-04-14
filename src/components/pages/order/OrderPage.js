@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar/Navbar';
 import Main from './Main/Main';
@@ -8,12 +7,18 @@ import OrderContext from '../../../context/OrderContext';
 
 export default function OrderPage() {
   // state
-  const [isModeAdmin, setIsModeAdmin] = useState(true);
+  const [isModeAdmin, setIsModeAdmin] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [currentTabSelected, setCurrentTabSelected] = useState('add');
 
   // comportements
   const orderContextValue = {
     isModeAdmin,
-    setIsModeAdmin
+    setIsModeAdmin,
+    isCollapsed,
+    setIsCollapsed,
+    currentTabSelected,
+    setCurrentTabSelected
   };
 
   //affichage

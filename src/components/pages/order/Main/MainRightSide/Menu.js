@@ -1,20 +1,23 @@
 import styled from 'styled-components';
-import { fakeMenu2 } from '../../../../fakeData/fakeMenu.js';
-import { theme } from '../../../../theme/index.js';
+import { fakeMenu2 } from '../../../../../fakeData/fakeMenu.js';
+import { theme } from '../../../../../theme/index.js';
 import { useState } from 'react';
-import Product from './Product.js';
+import Product from '../Product.js';
+import { formatPrice } from '../../../../../utils/maths.js';
 
 export default function Menu() {
   const [menu, setMenu] = useState(fakeMenu2);
 
   return (
     <MenuStyled className="menu">
-      {menu.map((produit) => {
+      {menu.map(({ id, title, imageSource, price }) => {
         return (
-          <div>
-            {' '}
-            <Product {...produit} />{' '}
-          </div>
+          <Product
+            key={id}
+            title={title}
+            imageSource={imageSource}
+            leftDescription={formatPrice(price)}
+          />
         );
       })}
     </MenuStyled>
