@@ -3,7 +3,7 @@ import PrimaryButton from '../../../reusable-ui/PrimaryButton';
 import { formatPrice } from '../../../../utils/maths';
 import { theme } from '../../../../theme';
 
-export default function Product({ title, imageSource, price }) {
+export default function Product({ title, imageSource, leftDescription }) {
   return (
     <ProductStyled className="product">
       <div className="image">
@@ -12,7 +12,7 @@ export default function Product({ title, imageSource, price }) {
       <div className="text-info">
         <div className="title">{title}</div>
         <div className="description">
-          <div className="left-description">{formatPrice(price)}</div>
+          <div className="left-description">{formatPrice(leftDescription)}</div>
           <div className="right-description">
             <PrimaryButton className="primary-button" label={'Ajouter'} />
           </div>
