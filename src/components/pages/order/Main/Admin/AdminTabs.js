@@ -3,23 +3,30 @@ import Tab from '../../../../reusable-ui/Tab';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { theme } from '../../../../../theme';
+import { useContext } from 'react';
+import OrderContext from '../../../../../context/OrderContext';
+import { tabsConfig } from './tabsConfig';
 
-export default function AdminTabs({ isCollapsed, setIsCollapsed }) {
-  const handleClick = () => {
-    setIsCollapsed(!isCollapsed);
+export default function AdminTabs() {
+  // state
+  const { isCollapsed, setIsCollapsed, currentTabSelected, setCurrentTabSelected } =
+    useContext(OrderContext);
+
+  // comportements
+  const selectTab = (tabSelected) => {
+    setIsCollapsed(false); // tu m'ouvres le pannel
+    setCurrentTabSelected(tabSelected);
   };
 
+  const tabs = tabsConfig;
+
+  // affichage
   return (
     <AdminTabsStyled>
       <Tab
+        index="chevron"
         label=""
         Icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
-        onClick={handleClick}
-        className={isCollapsed ? 'is-active' : ''}
-      />
-      <Tab
-        label="Ajouter un produit"
-        Icon={<AiOutlinePlus />}
         onClick={handleClick}
         className={isCollapsed ? 'is-active' : ''}
       />
@@ -29,7 +36,9 @@ export default function AdminTabs({ isCollapsed, setIsCollapsed }) {
 
 const AdminTabsStyled = styled.div`
   display: flex;
-  padding: 0 20px;
+  position: absolute;
+  top: -43px;
+  left: 5%;
 
   .is-active {
     background: ${theme.colors.background_dark};
