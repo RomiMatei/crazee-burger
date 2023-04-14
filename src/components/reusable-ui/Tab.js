@@ -21,7 +21,7 @@ const TabStyled = styled.button`
   cursor: pointer;
 
   position: relative;
-  left: 5%;
+
   top: 1px;
 
   font-size: ${theme.fonts.size.P0};
