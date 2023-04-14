@@ -8,29 +8,12 @@ import OrderContext from '../../../../../context/OrderContext';
 import { useContext } from 'react';
 
 export default function AdminTabs() {
-  const {
-    isCollapsed,
-    setIsCollapsed,
-    isAddSelected,
-    setIsAddSelected,
-    isEditSelected,
-    setIsEditSelected
-  } = useContext(OrderContext);
+  const { isCollapsed, setIsCollapsed, currentTabSelected, setCurrentTabSelected } =
+    useContext(OrderContext);
 
-  const handleClick = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
-  const handleAddClick = () => {
-    setIsCollapsed(false);
-    setIsAddSelected(true);
-    setIsEditSelected(false);
-  };
-
-  const handleEditClick = () => {
-    setIsCollapsed(false);
-    setIsEditSelected(true);
-    setIsAddSelected(false);
+  const selectTab = (tabSelected) => {
+    setIsCollapsed(false); // tu m'ouvres le pannel
+    setCurrentTabSelected(tabSelected);
   };
 
   return (
@@ -38,20 +21,20 @@ export default function AdminTabs() {
       <Tab
         label=""
         Icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
-        onClick={handleClick}
+        onClick={() => setIsCollapsed(!isCollapsed)}
         className={isCollapsed ? 'is-active' : ''}
       />
       <Tab
         label="Ajouter un produit"
         Icon={<AiOutlinePlus />}
-        onClick={handleAddClick}
-        className={isAddSelected ? 'is-active' : ''}
+        onClick={() => selectTab('add')}
+        className={currentTabSelected === 'add' ? 'is-active' : ''}
       />
       <Tab
         label="Modifier un produit"
         Icon={<MdModeEditOutline />}
-        onClick={handleEditClick}
-        className={isEditSelected ? 'is-active' : ''}
+        onClick={() => selectTab('edit')}
+        className={currentTabSelected === 'edit' ? 'is-active' : ''}
       />
     </AdminTabsStyled>
   );
